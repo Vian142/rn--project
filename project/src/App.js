@@ -4,13 +4,13 @@ import {
     Text,
     View
 } from 'react-native';
-import SignIn from './components/SignIn/SignIn'
+import UsersList from './components/UsersList/UsersList'
 
 export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <SignIn/>
+                <UsersList/>
             </View>
         );
     }
@@ -19,8 +19,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        flexDirection: 'column',
+        backgroundColor: '#ffffff',
     }
 });
