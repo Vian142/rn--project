@@ -4,12 +4,14 @@ import {
     StyleSheet,
     View,
     Text,
-    TextInput
+    TextInput,
+    Image
 } from 'react-native';
 import BackgroundImage from '../common/BackgroundImage/BackgroundImage';
 import { Button, Icon } from 'react-native-elements';
 
 const bgImage = require('./background.jpg');
+const logo = require('./logo.png');
 
 ///////////////////////////////////////////////////////////////////////////////
 export default class SignIn extends Component {
@@ -18,11 +20,11 @@ export default class SignIn extends Component {
             <View style={styles.wrapper}>
                 <BackgroundImage image={bgImage}>
                     <View style={styles.top}>
-                        <View style={styles.top_logo}>
-                            <Text>Logo</Text>
-                        </View>
-                        <View style={styles.message}>
-                            <Text>Вход</Text>
+                        <Image source={logo} style={styles.logo} />
+                        <View style={styles.line}/>
+                        <View style={styles.text}>
+                            <Text style={styles.text_top}>Добро пожаловать</Text>
+                            <Text style={styles.text_middle}>вход</Text>
                         </View>
                     </View>
                     <View style={styles.bottom}>
@@ -36,7 +38,7 @@ export default class SignIn extends Component {
                                     placeholder={'Login'}
                                     multiline={false}
                                     underlineColorAndroid='transparent'
-                                    placeholderTextColor='rgba(255, 255, 255, 0.8)'/>
+                                    placeholderTextColor='rgba(255, 255, 255, 0.8)' />
                             </View>
                             <View style={styles.input_row}>
                                 <Icon name='vpn-key'
@@ -44,13 +46,16 @@ export default class SignIn extends Component {
                                     color='#ffffff'
                                     style={styles.input_icon} />
                                 <TextInput style={styles.input}
+                                    secureTextEntry={true}
                                     placeholder={'Password'}
                                     underlineColorAndroid='transparent'
-                                    placeholderTextColor='rgba(255, 255, 255, 0.8)'/>
+                                    placeholderTextColor='rgba(255, 255, 255, 0.8)' />
                             </View>
                             <Button
-                                title='BUTTON'
-                                style={styles.submit}/>
+                                title='Вход'
+                                buttonStyle={styles.submit}
+                                backgroundColor='#ff2b4a'
+                                large={true} />
                         </View>
                     </View>
                 </BackgroundImage>
@@ -67,20 +72,49 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     top: {
-        flex: 2
+        flex: 2,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    line: {
+        width: 100,
+        height: 2,
+        backgroundColor: '#ff2b4a',
+        marginBottom: 10
+    },
+    logo: {
+        width: 140,
+        height: 140,
+        paddingTop: 5,
+        paddingRight: 5,
+        paddingBottom: 5,
+        paddingLeft: 5,
+        marginBottom: 15
+    },
+    text_top: {
+        fontSize : 24,
+        color: '#ffffff',
+        textAlign: 'center'
+    },
+    text_middle: {
+        fontSize : 18,
+        color: '#ffffff',
+        textAlign: 'center',
+        fontWeight: '100'
     },
     bottom: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center'
     },
     form: {
-        width: 320,
-        height: 170
+        width: 300,
+        height: 160,
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
     },
     input_row: {
-        width: 320,
-        height: 60,
+        height: 50,
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-start',
@@ -92,17 +126,21 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 30,
         marginTop: 10,
-        paddingLeft: 15,
-        borderRightWidth: 1
+        paddingLeft: 10,
+        paddingRight: 5,
+        borderRightWidth: 1,
+        borderRightColor: '#ffffff'
     },
     input: {
-        flex: 8,
+        flex: 7,
         height: 60,
         borderWidth: 0,
+        paddingLeft: 15,
         color: '#ffffff'
     },
     submit: {
-        width: 330
+        flex: 1,
+        height: 60
     }
 });
 

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89fbe572-6866-46af-82df-84f13cc348a7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/android/app/build.gradle" afterPath="$PROJECT_DIR$/project/android/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/android/app/src/main/java/com/project/MainApplication.java" afterPath="$PROJECT_DIR$/project/android/app/src/main/java/com/project/MainApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/android/settings.gradle" afterPath="$PROJECT_DIR$/project/android/settings.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.android.js" afterPath="$PROJECT_DIR$/project/index.android.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/ios/project.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/project/ios/project.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/ios/project/Info.plist" afterPath="$PROJECT_DIR$/project/ios/project/Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/package.json" afterPath="$PROJECT_DIR$/project/package.json" />
-    </list>
+    <list default="true" id="89fbe572-6866-46af-82df-84f13cc348a7" name="Default" comment="" />
     <ignored path="rn--project.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +27,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-32" />
-    <option name="y" value="146" />
+    <option name="x" value="168" />
+    <option name="y" value="167" />
     <option name="width" value="1115" />
     <option name="height" value="824" />
   </component>
@@ -65,7 +57,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -81,8 +74,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,7 +171,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-32" y="146" width="1115" height="824" extended-state="1" />
+    <frame x="168" y="167" width="1115" height="824" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
