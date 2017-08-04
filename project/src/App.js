@@ -4,13 +4,13 @@ import {
     Text,
     View
 } from 'react-native';
-import UsersList from './components/UsersList/UsersList'
+import Profile from './components/Profile/Profile'
 
 export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <UsersList/>
+                <Profile/>
             </View>
         );
     }
