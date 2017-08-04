@@ -18,20 +18,27 @@ const Row = (props) => {
         <Image
             style={styles.image}
             source={img} />
-        <Text style={styles.text}>
-            {`${data.name.first} ${data.name.last}`}
-        </Text>
-        <Text style={styles.age}>
-            {`${data.age}`}
-        </Text>
-        <Text style={styles.city}>
-            {`${data.age}`}
-        </Text>
-        <Icon 
-            name='remove-red-eye'
-            color='#517fa4'
-            iconStyle={styles.icon}
-        />
+        <View style={styles.info}>
+            <Text style={styles.name}>
+                {`${data.name.first} ${data.name.last}`}
+            </Text>
+            <Text style={styles.company}>
+                {`${data.company}`}
+            </Text>
+        </View>
+        <View style={styles.user_info}>
+            <Text style={styles.age}>
+                {`${data.age}`}
+            </Text>
+        </View>
+        <View style={styles.more}>
+            <Icon
+                size={20}
+                name='description'
+                color='#FAFAFA'
+                iconStyle={styles.icon}
+            />
+        </View>
     </View>
 }
 
@@ -53,23 +60,43 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        width: 40,
-        height: 40,
+        width: 60,
+        height: 60,
         borderRadius: 50
     },
-    text: {
-        flex: 5,
-        paddingLeft: 15,
+    info: {
+        flex: 4,
+        flexDirection: 'column',
+        paddingLeft: 10
+    },
+    user_info: {
+        flex: 1,
+        flexDirection: 'row'
+    },
+    name: {
+        fontSize: 18,
         color: '#ffffff'
     },
+    company: {
+        fontSize: 12,
+        color: '#bdbdbd'
+    },
     age: {
-        flex: 1
+        flex: 1,        
+        color: '#ffffff'
     },
     city: {
-        flex: 1
+        flex: 1,
+        color: '#ffffff'
     },
-    icon: {
-        fontSize: 16
+    more: {
+        flex: 0.5,
+        width: 1,
+        marginLeft: 10,
+        marginRight: 10,
+        paddingTop: 5,
+        paddingBottom: 5,
+        borderRadius: 5
     }
 })
 
