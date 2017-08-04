@@ -6,10 +6,10 @@ import {
     Text,
     Image
 } from 'react-native';
-
+import bgImage from './images/background.jpg';
 import BackgroundImage from '../common/BackgroundImage/BackgroundImage';
 import Sidebar from './Sidebar';
-import bgImage from './images/background.jpg';
+import Gallery from './Gallery';
 
 ///////////////////////////////////////////////////////////////////////////////
 export default class Profile extends Component {
@@ -29,7 +29,9 @@ export default class Profile extends Component {
                     <View style={styles.sidebar}>
                         <Sidebar/>
                     </View>
-                    <View style={styles.content}></View>
+                    <View style={styles.content}>
+                        <Gallery/>
+                    </View>
                 </View>
             </View>
         </BackgroundImage>
