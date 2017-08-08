@@ -6,10 +6,9 @@ import {
     Text,
     Image
 } from 'react-native';
+import Information from './Information';
 import bgImage from './images/background.jpg';
 import BackgroundImage from '../common/BackgroundImage/BackgroundImage';
-import Sidebar from './Sidebar';
-import Gallery from './Gallery';
 
 ///////////////////////////////////////////////////////////////////////////////
 export default class Profile extends Component {
@@ -17,21 +16,16 @@ export default class Profile extends Component {
         return <BackgroundImage image={bgImage}>
             <View style={styles.wrapper}>
                 <View style={styles.top}>
+                    <Text style={styles.process}>Показ ...</Text>
+                    <Text style={styles.nameSubject}>Reese, John</Text>
+                </View>
+                <View style={styles.infoBlock}>
                     <Image
-                        style={styles.avatar}    
-                        source={require('./images/photo.png')} />
-                    <View style={styles.mainInfo}>
-                        <Text style={styles.name}>Oliver Queen</Text>
-                        <Text style={styles.profession}>Vigilante</Text>
-                    </View>
+                        style={styles.avatar}
+                        source={require('./images/jonh_reese.jpeg')} />
                 </View>
                 <View style={styles.middle}>
-                    <View style={styles.sidebar}>
-                        <Sidebar/>
-                    </View>
-                    <View style={styles.content}>
-                        <Gallery/>
-                    </View>
+                    <Information/>
                 </View>
             </View>
         </BackgroundImage>
@@ -42,43 +36,66 @@ export default class Profile extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 const styles = StyleSheet.create({
     wrapper: {
+        borderWidth: 4,
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        borderColor: 'rgba(255, 255, 255, 1)',
+        borderRadius: 5,
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: 'rgba(0, 0, 0, 0.15)',
+        margin: 10
     },
-    top: {
+    process: {
+        padding: 5,
+        paddingLeft: 10,
+        fontSize: 16,
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        color: '#ffffff',
+        fontWeight: 'bold'
+    },
+    nameSubject: {
+        padding: 6,
+        paddingLeft: 10,
+        fontSize: 18,
+        backgroundColor: '#fffe22',
+        color: '#000000',
+        fontWeight: 'bold',
+    },
+    infoBlock: {
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center',
-        paddingRight: 20,
-        paddingLeft: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.15)',
-    },
-    avatar: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        borderWidth: 2,
-        borderColor: '#ffffff'
+        alignItems: 'flex-start',
+        paddingTop: 5,
     },
     mainInfo: {
-        flex: 3,
-        paddingLeft: 15
-    },
-    name: {
-        fontSize: 24,
-        color: '#ffffff'
+        flex: 2,
+        paddingLeft: 0
     },
     profession: {
         fontSize: 14,
         color: '#bdbdbd'
     },
     middle: {
-        flex: 4,
-        flexDirection: 'row',
-        borderTopWidth: 1,
-        borderTopColor: 'rgba(255, 255, 255, 0.3)',
+        flex: 1.5,
+        flexDirection: 'column',
+    },
+    rowText: {
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 15,
+        paddingRight: 15,
+        justifyContent: 'space-between',
+        flexDirection: 'row'
+    },
+    rowTextKey: {
+        marginRight: 5,
+        fontSize: 18,
+        color: 'rgba(255, 255, 255, 0.7)',
+    },
+    rowTextValue: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'rgba(255, 255, 255, 0.9)'
     },
     sidebar: {
         flex: 1
