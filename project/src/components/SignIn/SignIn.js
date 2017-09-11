@@ -15,13 +15,27 @@ const logo = require('./logo.png');
 
 ///////////////////////////////////////////////////////////////////////////////
 export default class SignIn extends Component {
+    static navigationOptions = {
+        title: 'Welcome',      
+        headerStyle: {
+            paddingRight: 10,
+            position: 'absolute',
+            backgroundColor: 'rgba(255, 255, 255, 0.7)',
+            zIndex: 1000,
+            top: 0,
+            left: 0,
+            right: 0
+        },
+        headerRight: <Icon name='dashboard' />
+    };
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.wrapper}>
                 <BackgroundImage image={bgImage}>
                     <View style={styles.top}>
                         <Image source={logo} style={styles.logo} />
-                        <View style={styles.line}/>
+                        <View style={styles.line} />
                         <View style={styles.text}>
                             <Text style={styles.text_top}>Добро пожаловать</Text>
                             <Text style={styles.text_middle}>вход</Text>
@@ -55,7 +69,10 @@ export default class SignIn extends Component {
                                 title='Вход'
                                 buttonStyle={styles.submit}
                                 backgroundColor='#ff2b4a'
-                                large={true} />
+                                large={true}
+                                onPress={() =>
+                                    navigate('Profile')
+                                } />
                         </View>
                     </View>
                 </BackgroundImage>
@@ -67,6 +84,9 @@ export default class SignIn extends Component {
 ///////////////////////////////////////////////////////////////////////////////
 
 const styles = StyleSheet.create({
+    headerStyle: {
+        paddingRight: 5
+    },
     wrapper: {
         flex: 1,
         flexDirection: 'row'
@@ -92,12 +112,12 @@ const styles = StyleSheet.create({
         marginBottom: 15
     },
     text_top: {
-        fontSize : 24,
+        fontSize: 24,
         color: '#ffffff',
         textAlign: 'center'
     },
     text_middle: {
-        fontSize : 18,
+        fontSize: 18,
         color: '#ffffff',
         textAlign: 'center',
         fontWeight: '100'
@@ -136,6 +156,7 @@ const styles = StyleSheet.create({
         height: 60,
         borderWidth: 0,
         paddingLeft: 15,
+        paddingBottom: 22,
         color: '#ffffff'
     },
     submit: {

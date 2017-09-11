@@ -4,17 +4,17 @@ import {
     Text,
     View
 } from 'react-native';
-import Profile from './components/Profile/Profile'
+import {
+    StackNavigator,
+} from 'react-navigation';
 
-export default class App extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Profile/>
-            </View>
-        );
-    }
-}
+import SignIn from './components/SignIn/SignIn';
+import Profile from './components/Profile/Profile';
+
+const App = StackNavigator({
+    SignIn: { screen: SignIn },
+    Profile: { screen: Profile }
+})
 
 const styles = StyleSheet.create({
     container: {
@@ -23,3 +23,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
     }
 });
+
+export default App;

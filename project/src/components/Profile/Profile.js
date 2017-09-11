@@ -4,7 +4,8 @@ import {
     StyleSheet,
     View,
     Text,
-    Image
+    Image,
+    Button
 } from 'react-native';
 import Information from './Information';
 import bgImage from './images/background.jpg';
@@ -12,20 +13,36 @@ import BackgroundImage from '../common/BackgroundImage/BackgroundImage';
 
 ///////////////////////////////////////////////////////////////////////////////
 export default class Profile extends Component {
+    static navigationOptions = {
+        title: 'Hello',
+        headerBackgroundColor: 'blue'
+    };
     render() {
+        const { navigate } = this.props.navigation;
         return <BackgroundImage image={bgImage}>
+            {
+                console.log(this.navigationOptions)
+            }
             <View style={styles.wrapper}>
                 <View style={styles.top}>
                     <Text style={styles.process}>Показ ...</Text>
                     <Text style={styles.nameSubject}>Reese, John</Text>
                 </View>
-                <View style={styles.infoBlock}>
+                <View style={styles.avatarBlock}>
                     <Image
                         style={styles.avatar}
                         source={require('./images/jonh_reese.jpeg')} />
                 </View>
                 <View style={styles.middle}>
-                    <Information/>
+                    <Information />
+                </View>
+                <View style={styles.btnWrap}>
+                    <Button
+                        onPress={
+                            () =>
+                                navigate('SignIn', { name: 'Profile' })
+                        }
+                        title='More' />
                 </View>
             </View>
         </BackgroundImage>
@@ -45,7 +62,7 @@ const styles = StyleSheet.create({
         margin: 10
     },
     process: {
-        padding: 5,
+        padding: 2,
         paddingLeft: 10,
         fontSize: 16,
         backgroundColor: 'rgba(0, 0, 0, 0.85)',
@@ -53,30 +70,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     nameSubject: {
-        padding: 6,
+        padding: 2,
         paddingLeft: 10,
         fontSize: 18,
         backgroundColor: '#fffe22',
         color: '#000000',
         fontWeight: 'bold',
     },
-    infoBlock: {
-        flex: 1,
+    avatarBlock: {
+        flex: 1.3,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingTop: 5,
     },
-    mainInfo: {
-        flex: 2,
-        paddingLeft: 0
-    },
-    profession: {
-        fontSize: 14,
-        color: '#bdbdbd'
+    avatar: {
+        width: 150,
+        height: 150
     },
     middle: {
-        flex: 1.5,
+        flex: 2,
         flexDirection: 'column',
     },
     rowText: {
@@ -89,19 +102,13 @@ const styles = StyleSheet.create({
     },
     rowTextKey: {
         marginRight: 5,
-        fontSize: 18,
+        fontSize: 12,
         color: 'rgba(255, 255, 255, 0.7)',
     },
     rowTextValue: {
-        fontSize: 18,
+        fontSize: 12,
         fontWeight: 'bold',
         color: 'rgba(255, 255, 255, 0.9)'
-    },
-    sidebar: {
-        flex: 1
-    },
-    content: {
-        flex: 6
     }
 })
 
